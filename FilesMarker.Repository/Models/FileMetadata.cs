@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FilesMarker.Repository.Models;
 
-public record FileMetadata
+public class FileMetadata : BaseEntity
 {
     [Column("id")]
     public Guid Id { get; init; }

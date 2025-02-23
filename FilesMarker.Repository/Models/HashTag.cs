@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FilesMarker.Repository.Models;
 
-public record HashTag
+public class HashTag : BaseEntity
 {
     [Column("id")]
     public Guid Id { get; set; }
