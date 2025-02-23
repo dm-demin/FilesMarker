@@ -30,7 +30,8 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created");
 
                     b.Property<string>("FilePath")
                         .IsRequired()
@@ -38,7 +39,8 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("file_path");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("modified");
 
                     b.HasKey("Id");
 
@@ -53,14 +55,16 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created");
 
                     b.Property<Guid?>("HierarchyId")
                         .HasColumnType("uuid")
                         .HasColumnName("hierarchy_id");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("modified");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -86,10 +90,12 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("created");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("modified");
 
                     b.Property<string>("Name")
                         .IsRequired()

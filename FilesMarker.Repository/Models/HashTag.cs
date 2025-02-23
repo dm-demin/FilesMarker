@@ -4,9 +4,6 @@ namespace FilesMarker.Repository.Models;
 
 public class HashTag : BaseEntity
 {
-    [Column("id")]
-    public Guid Id { get; set; }
-    
     [Column("name")]
     public required string Name { get; set; }
     

@@ -12,42 +12,42 @@ namespace FilesMarker.Repository.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<DateTime>(
-                name: "CreatedDate",
+                name: "created",
                 table: "hashtags_hierarchies",
                 type: "timestamp with time zone",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "ModifiedDate",
+                name: "modified",
                 table: "hashtags_hierarchies",
                 type: "timestamp with time zone",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "CreatedDate",
+                name: "created",
                 table: "hashtags",
                 type: "timestamp with time zone",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "ModifiedDate",
+                name: "modified",
                 table: "hashtags",
                 type: "timestamp with time zone",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "CreatedDate",
+                name: "created",
                 table: "files",
                 type: "timestamp with time zone",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "ModifiedDate",
+                name: "modified",
                 table: "files",
                 type: "timestamp with time zone",
                 nullable: false,
@@ -58,27 +58,27 @@ namespace FilesMarker.Repository.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "CreatedDate",
+                name: "created",
                 table: "hashtags_hierarchies");
 
             migrationBuilder.DropColumn(
-                name: "ModifiedDate",
+                name: "modified",
                 table: "hashtags_hierarchies");
 
             migrationBuilder.DropColumn(
-                name: "CreatedDate",
+                name: "created",
                 table: "hashtags");
 
             migrationBuilder.DropColumn(
-                name: "ModifiedDate",
+                name: "modified",
                 table: "hashtags");
 
             migrationBuilder.DropColumn(
-                name: "CreatedDate",
+                name: "created",
                 table: "files");
 
             migrationBuilder.DropColumn(
-                name: "ModifiedDate",
+                name: "modified",
                 table: "files");
         }
     }
