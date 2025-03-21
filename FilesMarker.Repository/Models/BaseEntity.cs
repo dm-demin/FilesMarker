@@ -7,9 +7,9 @@ public class BaseEntity
     [Column("id")]
     public Guid Id { get; set; }
     
-    [Column("created")]
+    [Column("created", TypeName = "timestamp(6)")]
     public DateTime CreatedDate { get; set; }
     
-    [Column("modified")]
+    [Column("modified", TypeName = "timestamp(6)")]
     public DateTime ModifiedDate { get; set; }
 }

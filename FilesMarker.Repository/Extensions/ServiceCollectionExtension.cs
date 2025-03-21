@@ -1,4 +1,7 @@
+using FileMarker.Abstractions;
 using FilesMarker.Repository.Contexts;
+using FilesMarker.Repository.Implementation;
+using FilesMarker.Repository.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +13,10 @@ public static class ServiceCollectionExtension
     {
         services.AddDbContext<FilesMetadataContext>(options => 
             options.UseNpgsql(connectionString));
-        
+
+        services.AddScoped<DbContext, FilesMetadataContext>();
+        services.AddScoped<IRepository<FileMetadata>, FilesRepository>();
+
         return services;
     }
 }
