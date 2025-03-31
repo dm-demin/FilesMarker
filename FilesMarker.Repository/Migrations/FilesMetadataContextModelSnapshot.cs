@@ -22,7 +22,7 @@ namespace FilesMarker.Repository.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("FilesMarker.Repository.Models.FileMetadata", b =>
+            modelBuilder.Entity("FilesMarker.Abstractions.Models.Entities.FileMetadata", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,7 +30,7 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp(6)")
                         .HasColumnName("created");
 
                     b.Property<string>("FilePath")
@@ -39,7 +39,7 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("file_path");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp(6)")
                         .HasColumnName("modified");
 
                     b.HasKey("Id");
@@ -47,7 +47,7 @@ namespace FilesMarker.Repository.Migrations
                     b.ToTable("files", (string)null);
                 });
 
-            modelBuilder.Entity("FilesMarker.Repository.Models.HashTag", b =>
+            modelBuilder.Entity("FilesMarker.Abstractions.Models.Entities.HashTagsHierarchy", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,7 +55,32 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("id");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp(6)")
+                        .HasColumnName("created");
+
+                    b.Property<DateTime>("ModifiedDate")
+                        .HasColumnType("timestamp(6)")
+                        .HasColumnName("modified");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("hashtags_hierarchies", (string)null);
+                });
+
+            modelBuilder.Entity("FilesMarker.Repository.Entities.HashTag", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp(6)")
                         .HasColumnName("created");
 
                     b.Property<Guid?>("HierarchyId")
@@ -63,7 +88,7 @@ namespace FilesMarker.Repository.Migrations
                         .HasColumnName("hierarchy_id");
 
                     b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("timestamp with time zone")
+                        .HasColumnType("timestamp(6)")
                         .HasColumnName("modified");
 
                     b.Property<string>("Name")
@@ -82,31 +107,6 @@ namespace FilesMarker.Repository.Migrations
                     b.ToTable("hashtags", (string)null);
                 });
 
-            modelBuilder.Entity("FilesMarker.Repository.Models.HashTagsHierarchy", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created");
-
-                    b.Property<DateTime>("ModifiedDate")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("modified");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("hashtags_hierarchies", (string)null);
-                });
-
             modelBuilder.Entity("files_hashtags", b =>
                 {
                     b.Property<Guid>("file_id")
@@ -122,9 +122,9 @@ namespace FilesMarker.Repository.Migrations
                     b.ToTable("files_hashtags");
                 });
 
-            modelBuilder.Entity("FilesMarker.Repository.Models.HashTag", b =>
+            modelBuilder.Entity("FilesMarker.Repository.Entities.HashTag", b =>
                 {
-                    b.HasOne("FilesMarker.Repository.Models.HashTagsHierarchy", "Hierarchy")
+                    b.HasOne("FilesMarker.Abstractions.Models.Entities.HashTagsHierarchy", "Hierarchy")
                         .WithMany("HashTags")
                         .HasForeignKey("HierarchyId");
 
@@ -133,20 +133,20 @@ namespace FilesMarker.Repository.Migrations
 
             modelBuilder.Entity("files_hashtags", b =>
                 {
-                    b.HasOne("FilesMarker.Repository.Models.FileMetadata", null)
+                    b.HasOne("FilesMarker.Abstractions.Models.Entities.FileMetadata", null)
                         .WithMany()
                         .HasForeignKey("file_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FilesMarker.Repository.Models.HashTag", null)
+                    b.HasOne("FilesMarker.Repository.Entities.HashTag", null)
                         .WithMany()
                         .HasForeignKey("hashtag_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("FilesMarker.Repository.Models.HashTagsHierarchy", b =>
+            modelBuilder.Entity("FilesMarker.Abstractions.Models.Entities.HashTagsHierarchy", b =>
                 {
                     b.Navigation("HashTags");
                 });

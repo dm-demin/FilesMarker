@@ -3,8 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FilesMarker.Abstractions.Interfaces;
 using FilesMarker.Abstractions.Models.Entities;
+using FilesMarker.Repository.Contexts;
 using FilesMarker.Repository.Implementation;
 using FilesMarker.Repository.Extensions;
+using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 namespace FilesMarker.Tests.Integration;
@@ -21,8 +23,10 @@ public class FilesRepositoryTests
         var serviceCollection = new ServiceCollection();
         var dbConnectionString = configuration.GetSection("ConnectionString").Value ?? string.Empty;
         serviceCollection.AddRepository(dbConnectionString);
-        
         var serviceProvider = serviceCollection.BuildServiceProvider();
+        var dbContext = serviceProvider.GetService<FilesMetadataContext>();
+        dbContext.Database.Migrate();
+
         _filesRepository = serviceProvider.GetService<IFileRepository>();
     }
 
