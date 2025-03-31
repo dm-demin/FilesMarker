@@ -16,10 +16,6 @@ jobs:
       - name: Create additional user
         run: |
           sudo -u postgres psql --command="CREATE USER filesmarker PASSWORD 'filesmarker'" --command="\du"
-      - name: Create additional database
-        run: |
-          sudo -u postgres createdb files_marker_db --owner=filesmarker 
-          PGPASSWORD=filesmarker 
       - uses: actions/checkout@v3
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v3
