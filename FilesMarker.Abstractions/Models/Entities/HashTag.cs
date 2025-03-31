@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using FilesMarker.Abstractions.Models.Entities;
 
-namespace FilesMarker.Repository.Models;
+namespace FilesMarker.Repository.Entities;
 
 public class HashTag : BaseEntity
 {

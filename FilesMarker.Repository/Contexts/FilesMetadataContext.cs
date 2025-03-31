@@ -1,5 +1,6 @@
+using FilesMarker.Abstractions.Models.Entities;
+using FilesMarker.Repository.Entities;
 using Microsoft.EntityFrameworkCore;
-using FilesMarker.Repository.Models;
 
 namespace FilesMarker.Repository.Contexts
 {

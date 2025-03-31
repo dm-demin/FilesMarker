@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesMarker", "FilesMarker\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesMarker.Repository", "FilesMarker.Repository\FilesMarker.Repository.csproj", "{C208629E-906F-43FA-92AF-1A8424D66A94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMarker.Abstractions", "FileMarker.Abstractions\FileMarker.Abstractions.csproj", "{B89A6CEE-EEFC-4FA2-B6F0-1F151227C3FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesMarker.Abstractions", "FilesMarker.Abstractions\FilesMarker.Abstractions.csproj", "{B89A6CEE-EEFC-4FA2-B6F0-1F151227C3FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesMarker.Tests.Integration", "FilesMarker.Tests.Integration\FilesMarker.Tests.Integration.csproj", "{C982D20D-27EE-4EA0-BCE2-7D2E9C0C19AC}"
 EndProject

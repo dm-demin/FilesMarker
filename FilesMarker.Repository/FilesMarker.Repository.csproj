@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FileMarker.Abstractions\FileMarker.Abstractions.csproj" />
+      <ProjectReference Include="..\FilesMarker.Abstractions\FilesMarker.Abstractions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

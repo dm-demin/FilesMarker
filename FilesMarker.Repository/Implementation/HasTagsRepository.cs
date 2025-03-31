@@ -1,4 +1,4 @@
-using FilesMarker.Repository.Models;
+using FilesMarker.Repository.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilesMarker.Repository.Implementation;

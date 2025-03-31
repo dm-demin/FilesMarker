@@ -1,4 +1,4 @@
-﻿namespace FileMarker.Abstractions;
+﻿namespace FilesMarker.Abstractions.Interfaces;
 
 public interface IRepository<T>
 {

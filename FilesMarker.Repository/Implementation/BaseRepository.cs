@@ -1,7 +1,7 @@
-using FileMarker.Abstractions;
-using FilesMarker.Repository.Exceptions;
-using FilesMarker.Repository.Models;
 using Microsoft.EntityFrameworkCore;
+using FilesMarker.Abstractions.Interfaces;
+using FilesMarker.Abstractions.Models.Entities;
+using FilesMarker.Repository.Exceptions;
 
 namespace FilesMarker.Repository.Implementation;
 

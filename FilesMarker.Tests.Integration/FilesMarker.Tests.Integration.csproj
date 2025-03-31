@@ -26,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FileMarker.Abstractions\FileMarker.Abstractions.csproj" />
+      <ProjectReference Include="..\FilesMarker.Abstractions\FilesMarker.Abstractions.csproj" />
       <ProjectReference Include="..\FilesMarker.Repository\FilesMarker.Repository.csproj" />
     </ItemGroup>
 

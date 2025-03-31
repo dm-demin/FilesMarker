@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FilesMarker.Repository.Models;
+namespace FilesMarker.Abstractions.Models.Entities;
 
 public class BaseEntity
 {
