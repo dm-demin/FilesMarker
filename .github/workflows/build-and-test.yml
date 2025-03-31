@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Start PostgreSQL on Ubuntu
+      - name: Start PostgreSQL
         run: |
           sudo systemctl start postgresql.service
           pg_isready
